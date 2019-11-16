@@ -79,7 +79,7 @@ pipeline {
     
         post {
         always {
-            emailext body:'This is a mail from Jenkins' to: "slim.maali@esprit.tn", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Jenkins Kamel 5edmtou'
+            emailext body: 'This is a mail from Jenkins', to: "slim.maali@esprit.tn", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Jenkins Kamel 5edmtou'
         }
     }
     
