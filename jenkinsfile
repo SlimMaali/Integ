@@ -79,7 +79,7 @@ pipeline {
     
         post {
         always {
-            emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}\nThis is the Log: ${BUILD_LOG, maxLines=9999, escapeHtml=false}" , to: "slim.maali@esprit.tn", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Jenkins Kamel 5edmtou'
+            emailext attachLog: true, body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}\n" , to: "slim.maali@esprit.tn", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Jenkins Kamel 5edmtou'
         }
     }
     
